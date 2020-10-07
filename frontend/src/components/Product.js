@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
-import Rating from './Rating'
+import Rating from './Rating';
 
 const Product = ({ product }) => {
     return (
@@ -26,7 +26,7 @@ const Product = ({ product }) => {
                 </Card.Text>
             </Card.Body>
         </Card>
-    )
-}
+    );
+};
 
-export default Product
+export default Product;

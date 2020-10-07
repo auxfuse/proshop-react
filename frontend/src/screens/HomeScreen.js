@@ -1,6 +1,6 @@
-import React from 'react'
-import {Row, Col} from 'react-bootstrap'
-import Product from '../components/Product'
+import React from 'react';
+import {Row, Col} from 'react-bootstrap';
+import Product from '../components/Product';
 import products from "../products";
 
 const HomeScreen = () => {
@@ -15,7 +15,7 @@ const HomeScreen = () => {
                 ))}
             </Row>
         </>
-    )
-}
+    );
+};
 
-export default HomeScreen
+export default HomeScreen;
