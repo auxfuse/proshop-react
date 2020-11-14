@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { PayPalButton } from "react-paypal-button-v2";
 import axios from 'axios';
 import { Link } from "react-router-dom";
-import { Button, Row, Col, ListGroup, Image, Card } from 'react-bootstrap';
+import { Row, Col, ListGroup, Image, Card } from 'react-bootstrap';
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
-import {getOrderDetails, payOrderDetails, payOrder} from "../actions/orderActions";
+import {getOrderDetails, payOrder} from "../actions/orderActions";
 import { ORDER_PAY_RESET } from "../constants/orderConstants";
 
 const OrderScreen = ({ match }) => {
