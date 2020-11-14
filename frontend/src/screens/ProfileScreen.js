@@ -34,7 +34,7 @@ const ProfileScreen = ({ location, history }) => {
         if(!userInfo) {
             history.push('/login')
         } else {
-            if(!user.name || success) {
+            if(!user || !user.name || success) {
                 dispatch({ type: USER_UPDATE_PROFILE_RESET })
                 dispatch(getUserDetails('profile'))
                 dispatch(listMyOrders())
@@ -119,17 +119,21 @@ const ProfileScreen = ({ location, history }) => {
                             </tr>
                         </thead>
                         <tbody>
-                        {orders.map(order => (
+                        {orders.map((order) => (
                             <tr key={order._id}>
                                 <td>{order._id}</td>
                                 <td>{order.createdAt.substring(0, 10)}</td>
                                 <td>{order.totalPrice}</td>
-                                <td>{order.isPaid ? order.paidAt.substring(0, 10) : (
-                                    <i className='fas fa-times' style={{color: 'red'}}/>
-                                )}</td>
-                                <td>{order.isDelivered ? order.deliveredAt.substring(0, 10) : (
-                                    <i className='fas fa-times' style={{color: 'red'}}/>
-                                )}</td>
+                                <td>
+                                    {order.isPaid ? order.paidAt.substring(0, 10) : (
+                                        <i className='fas fa-times' style={{color: 'red'}}/>
+                                    )}
+                                </td>
+                                <td>
+                                    {order.isDelivered ? order.deliveredAt.substring(0, 10) : (
+                                        <i className='fas fa-times' style={{color: 'red'}}/>
+                                    )}
+                                </td>
                                 <td>
                                     <LinkContainer to={`/order/${order._id}`}>
                                         <Button className='btn-sm' variant='light'>Details</Button>
@@ -139,8 +143,7 @@ const ProfileScreen = ({ location, history }) => {
                         ))}
                         </tbody>
                     </Table>
-                )
-                }
+                )}
             </Col>
         </Row>
     )
