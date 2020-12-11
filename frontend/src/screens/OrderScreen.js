@@ -56,7 +56,7 @@ const OrderScreen = ({ match, history }) => {
                 setSdkReady(true);
             }
         }
-    },[dispatch, order, successPay, successDeliver, orderId]);
+    },[dispatch, history, userInfo, order, successPay, successDeliver, orderId]);
 
     if(!loading){
       // Calculate Prices
