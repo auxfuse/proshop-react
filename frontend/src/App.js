@@ -39,6 +39,7 @@ const App = () => {
                 <Route path='/placeorder' component={PlaceOrderScreen} />
                 <Route path='/order/:id' component={OrderScreen} />
                 <Route path='/cart/:id?' component={CartScreen}/>
+                <Route path='/search/:keyword' component={HomeScreen} />
                 <Route path='/' component={HomeScreen} exact />
             </Container>
         </main>
